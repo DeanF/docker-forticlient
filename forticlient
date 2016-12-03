@@ -17,7 +17,7 @@ expect -exact "Would you like to connect to this server? (Y/N)" {
 
 # In case of token
 expect -exact "A FortiToken code is required for SSL-VPN login authentication." {
-  send -- "$env(VPNTOKEN)"
+  send -- "$env(VPNTOKEN)\n"
 }
 
 # Expect tunnel to actually start
