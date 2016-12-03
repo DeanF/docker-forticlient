@@ -21,7 +21,8 @@ docker run -it --rm \
   -e VPNADDR=host:port \
   -e VPNUSER=me@domain \
   -e VPNPASS=secret \
-  auchandirect/forticlient
+  -e VPNTOKEN=token \
+  deanf/forticlient
 
 # Add route for you remote subnet (ex. 10.201.0.0/16)
 ip route add 10.201.0.0/16 via 172.20.0.2
@@ -66,3 +67,7 @@ docker inspect --format '{{ .NetworkSettings.IPAddress }}' <container>
 ### Precompiled binaries
 
 Thanks to [https://hadler.me](https://hadler.me/linux/forticlient-sslvpn-deb-packages/) for hosting up to date precompiled binaries which are used in this Dockerfile.
+
+
+### Thanks
+[AuchanDirect](https://github.com/AuchanDirect/docker-forticlient) for the base image.
